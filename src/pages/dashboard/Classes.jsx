@@ -6,6 +6,7 @@ import {servers} from "@/configs/index.js";
 import {Button, Card, Spinner, Typography} from "@material-tailwind/react";
 import {AcademicCapIcon} from "@heroicons/react/20/solid/index.js";
 import Markdown from "react-markdown";
+import Loader from "@/components/Loader.jsx";
 
 const Classes = () => {
     const [classes, setClasses] = useState([]);
@@ -71,7 +72,7 @@ const Classes = () => {
     };
 
     if (loader) {
-        return (<Spinner/>);
+        return (<Loader/>);
     }
 
     return (

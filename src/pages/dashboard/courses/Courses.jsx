@@ -7,6 +7,7 @@ import {AiFillFilter, AiOutlineSearch} from "react-icons/ai";
 import {GlobeAltIcon} from "@heroicons/react/20/solid/index.js";
 import {ChevronDoubleDownIcon, HeartIcon, SparklesIcon, UserIcon} from "@heroicons/react/24/solid";
 import {Course} from "@/components/index.js";
+import Loader from "@/components/Loader.jsx";
 
 // eslint-disable-next-line react/prop-types
 function Courses({ isLink }) {
@@ -44,7 +45,7 @@ function Courses({ isLink }) {
     }, []);
 
     if (loader) {
-        return (<Spinner color="gray"/>);
+        return (<Loader/>);
     }
 
     if (!globalCourses.length && !classCourses.length && !interestedCourses.length) {

@@ -11,6 +11,7 @@ import {ModernClassesTags} from "@/components/Tags.jsx";
 import {ModernListTopics, ModernSummaryCard} from "@/components/Cards.jsx";
 import {BiBookmark, BiCalendar, BiStats} from "react-icons/bi";
 import {MdDataUsage} from "react-icons/md";
+import Loader from "@/components/Loader.jsx";
 
 export function Home() {
   const {userData } = useAuth();
@@ -59,7 +60,7 @@ export function Home() {
     }, [userData]);
 
   if (loader) {
-        return <Spinner />;
+        return <Loader/>;
   }
   return (
     <div className="mt-12">

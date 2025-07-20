@@ -14,6 +14,9 @@ import {SiGoogleclassroom} from "react-icons/si";
 import Classes from "@/pages/dashboard/Classes.jsx";
 import Courses from "@/pages/dashboard/courses/Courses.jsx";
 import Course from "@/pages/dashboard/courses/Course.jsx";
+import Tasks from "@/pages/dashboard/tasks/Tasks.jsx";
+import Quiz from "@/pages/dashboard/tasks/Quiz.jsx";
+import {GrTask} from "react-icons/gr";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -30,14 +33,6 @@ export const routes = [
         protected: true,
         roles: ["ADMIN"],
         element:<Admin />,
-      },
-      {
-        icon: <UserCircleIcon {...icon} />,
-        name: "profile",
-        path: "/profile",
-        protected: true,
-        roles:  ["ADMIN"],
-        element: <Profile />,
       },
       {
         icon: <TableCellsIcon {...icon} />,
@@ -85,6 +80,23 @@ export const routes = [
         hide:true,
         roles:  ["ADMIN", "NORMAL", "SPECIAL"],
         element: <Course/>,
+      },
+      {
+        icon: <GrTask {...icon} />,
+        name: "Tests and Tasks",
+        path: "/tasks",
+        protected: true,
+        roles:  ["ADMIN", "NORMAL", "SPECIAL"],
+        element: <Tasks/>,
+      },
+      {
+        icon: <GrTask {...icon} />,
+        name: "Quiz",
+        path: "/tasks/:id",
+        protected: true,
+        hide: true,
+        roles:  ["ADMIN", "NORMAL", "SPECIAL"],
+        element: <Quiz/>,
       },
       {
         icon: <UserCircleIcon {...icon} />,

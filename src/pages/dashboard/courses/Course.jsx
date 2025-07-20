@@ -6,6 +6,7 @@ import {fetchData, returnToken} from "@/utils/index.js";
 import {servers} from "@/configs/index.js";
 import {SparklesIcon} from "@heroicons/react/24/solid";
 import InteractiveCourseViewer from "@/pages/dashboard/courses/InteractiveCourseViewer.jsx";
+import Loader from "@/components/Loader.jsx";
 
 function Course() {
     const { courseID } = useParams();
@@ -34,21 +35,7 @@ function Course() {
 
 
     if (loader) {
-        return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center relative overflow-hidden">
-                {/* Animated background elements */}
-                <div className="absolute inset-0">
-                    <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-                    <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                </div>
-
-                <div className="relative z-10 text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-cyan-500 rounded-full mb-4 animate-spin">
-                        {/* eslint-disable-next-line react/jsx-no-undef */}
-                        <SparklesIcon className="w-8 h-8 text-white" />
-                    </div>
-                    <p className="text-white/80 text-lg font-medium">Loading your learning universe...</p>
-                </div>
-            </div>;
+        return <Loader/>
     }
 
     if (!courseDetails) {

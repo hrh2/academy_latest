@@ -2,56 +2,84 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Dashboard, Auth } from "@/layouts";
 import routes from "@/routes.jsx";
 import PrivateRoute from "@/components/PrivateRoute";
-import {Spinner} from "@material-tailwind/react";
-import {useAuth} from "@/context/AuthContext.jsx";
+import Loader from "@/components/Loader.jsx";
+import { useAuth } from "@/context/AuthContext.jsx";
 
 function App() {
-    const { loading ,userData } = useAuth();
+    const { loading, userData } = useAuth();
 
-    if (loading) return <Spinner />;
+    if (loading) return <Loader />;
 
     const userRole = () => {
-        return userData && userData.role;
+        return userData?.role;
     }
 
-  return (
-    <Routes>
+    const isAdmin = () => {
+        return userData && userData.role !== 'NORMAL';
+    }
 
-      <Route path="/auth" element={<Auth />}>
-        {routes.map(
-          ({ layout, pages }) =>
-            layout === "auth" &&
-            pages.map(({ path, element }, i) => (
-              <Route key={i} path={`${path}`} element={element} />
-            ))
-        )}
-      </Route>
+    return (
+        <Routes>
 
-      <Route path="/" element={<Dashboard />}>
-        {routes.map(
-          ({ layout, pages }) =>
-            layout === userRole() &&
-            pages.map(({ path, element, protected: isProtected, roles }, i) => (
-              <Route
-                key={i}
-                path={path}
-                element={
-                  isProtected ? (
-                    <PrivateRoute allowedRoles={roles}>{element}</PrivateRoute>
-                  ) : (
-                    element
-                  )
-                }
-              />
-            ))
-        )}
-      </Route>
+            {/* Auth Layout Routes */}
+            <Route path="/auth" element={<Auth />}>
+                {routes.map(
+                    ({ layout, pages }) =>
+                        layout === "auth" &&
+                        pages.map(({ path, element }, i) => (
+                            <Route key={i} path={path} element={element} />
+                        ))
+                )}
+            </Route>
+            <Route path="/" element={<Dashboard />}>
+            {/* Main App Routes */}
+            {
+                isAdmin() ? (
+                    // Admin sees all routes without layout filtering
+                    routes.flatMap(({ pages }) =>
+                        pages.map(({ path, element, protected: isProtected, roles }, i) => (
+                            <Route
+                                key={i}
+                                path={path}
+                                element={
+                                    isProtected ? (
+                                        <PrivateRoute allowedRoles={roles}>{element}</PrivateRoute>
+                                    ) : (
+                                        element
+                                    )
+                                }
+                            />
+                        ))
+                    )
+                ) : (
+                    // Normal users see routes based on their layout
+                        routes.map(
+                            ({ layout, pages }) =>
+                                layout === userRole() &&
+                                pages.map(({ path, element, protected: isProtected, roles }, i) => (
+                                    <Route
+                                        key={i}
+                                        path={path}
+                                        element={
+                                            isProtected ? (
+                                                <PrivateRoute allowedRoles={roles}>{element}</PrivateRoute>
+                                            ) : (
+                                                element
+                                            )
+                                        }
+                                    />
+                                ))
+                        )
+                )
+            }
+                    </Route>
 
-      <Route path="/unauthorized" element={<div>Unauthorized</div>} />
+            {/* Fallback Routes */}
+            <Route path="/unauthorized" element={<div>Unauthorized</div>} />
+            <Route path="*" element={<Navigate to="/" replace />} />
 
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-  );
+        </Routes>
+    );
 }
 
 export default App;

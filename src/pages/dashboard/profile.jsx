@@ -27,6 +27,7 @@ import {useNotification} from "@/context/NotificationContext.jsx";
 import {servers} from "@/configs/index.js";
 import {fetchData, returnToken, setToken, updateData} from "@/utils/index.js";
 import {XMarkIcon} from "@heroicons/react/24/outline";
+import Loader from "@/components/Loader.jsx";
 
 export function Profile() {
   const [user, setUser] = useState({});
@@ -88,7 +89,7 @@ export function Profile() {
     };
 
     if (loader) {
-        return <Spinner/>
+        return <Loader/>
     }
 
   return (
