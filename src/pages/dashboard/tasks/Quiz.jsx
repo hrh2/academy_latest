@@ -224,7 +224,7 @@ const Task = () => {
                 {task.course && (
                   <Link
                     to={`/courses/${task.course}`}
-                    className="group px-3 sm:px-4 py-2 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 hover:border-blue-400/50 text-blue-300 hover:text-blue-200 rounded-xl transition-all duration-300 text-sm font-medium"
+                    className="group px-3 sm:px-4 py-2 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 hover:border-blue-400/50 text-blue-500 hover:text-blue-300 rounded-xl transition-all duration-300 text-sm font-medium"
                   >
                     <span className="group-hover:scale-105 inline-block transition-transform">
                       📚 Course
@@ -234,7 +234,7 @@ const Task = () => {
                 {task.practice && task.practice.course && task.practice.id && (
                   <Link
                     to={`/courses/${task.practice.course}?topic=${task.practice.id}`}
-                    className="group px-3 sm:px-4 py-2 bg-green-500/20 hover:bg-green-500/30 border border-green-500/30 hover:border-green-400/50 text-green-300 hover:text-green-200 rounded-xl transition-all duration-300 text-sm font-medium"
+                    className="group px-3 sm:px-4 py-2 bg-green-500/20 hover:bg-green-500/30 border border-green-500/30 hover:border-green-400/50 text-green-500 hover:text-green-300 rounded-xl transition-all duration-300 text-sm font-medium"
                   >
                     <span className="group-hover:scale-105 inline-block transition-transform">
                       🎯 {task.practice.title?.trim() || 'Practice'}
@@ -264,12 +264,12 @@ const Task = () => {
             <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-xl border border-green-500/30 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 shadow-xl">
               <div className="flex items-center space-x-3 sm:space-x-4">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500/30 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-green-400 text-xl sm:text-2xl">✓</span>
+                  <span className="text-green-500 text-xl sm:text-2xl">✓</span>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-green-400 text-lg sm:text-xl font-bold">Quiz Completed!</h3>
+                  <h3 className="text-green-600 text-lg sm:text-xl font-bold">Quiz Completed!</h3>
                   {task.submissions && task.submissions.length > 0 && (
-                    <p className="text-green-300 text-sm sm:text-base break-words">
+                    <p className="text-green-500 text-sm sm:text-base break-words">
                       Final Score: <span className="font-bold text-yellow-900">{task.submissions[0].score}</span> / {task.questions.reduce((sum, q) => sum + (q.mark || 1), 0)} points
                     </p>
                   )}
@@ -282,22 +282,22 @@ const Task = () => {
             <div className="bg-gradient-to-r from-red-500/30 to-pink-500/30 backdrop-blur-xl border border-red-500/50 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 shadow-xl">
               <div className="flex items-center space-x-3 sm:space-x-4">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-500/40 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-red-500 text-xl sm:text-2xl">⏰</span>
+                  <span className="text-red-600 text-xl sm:text-2xl">⏰</span>
                 </div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-red-500 text-lg sm:text-xl font-bold">Deadline Passed</h3>
-                  <p className="text-red-400 text-sm sm:text-base">This quiz is no longer accepting submissions.</p>
+                  <h3 className="text-red-600 text-lg sm:text-xl font-bold">Deadline Passed</h3>
+                  <p className="text-red-500 text-sm sm:text-base">This quiz is no longer accepting submissions.</p>
                 </div>
               </div>
             </div>
           )}
 
           {/* Questions */}
-          <div className="space-y-6 sm:space-y-8">
+          <div className="space-y-6 sm:space-y-8 ">
             {task.questions.map((question, qIndex) => (
               <div
                 key={question._id}
-                className="bg-gray-800/20 backdrop-blur-xl border border-gray-700/50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl hover:shadow-purple-500/10 transition-all duration-500"
+                className="bg-gray-100 backdrop-blur-xl border border-gray-700/50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl hover:shadow-purple-500/10 transition-all duration-500"
               >
                 <div className="flex flex-col sm:flex-row sm:items-start space-y-4 sm:space-y-0 sm:space-x-4 mb-4 sm:mb-6">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
@@ -357,7 +357,7 @@ const Task = () => {
                                 <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 flex items-center justify-center mt-0.5 sm:mt-1 flex-shrink-0 transition-all duration-300 ${
                                   isSelected 
                                     ? isCorrect 
-                                      ? 'border-green-400 bg-green-400' 
+                                      ? 'border-green-400 bg-green-500' 
                                       : isIncorrect 
                                         ? 'border-red-500 bg-red-500'
                                         : 'border-purple-400 bg-purple-400'
@@ -377,13 +377,13 @@ const Task = () => {
                               {showAnswers && (
                                 <div className="flex flex-wrap gap-2 sm:ml-4">
                                   {isCorrect && (
-                                    <div className="flex items-center space-x-1 px-2 sm:px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-xs sm:text-sm font-medium">
+                                    <div className="flex items-center space-x-1 px-2 sm:px-3 py-1 bg-green-600/10 text-green-900 rounded-full text-xs sm:text-sm font-medium">
                                       <span>✓</span>
                                       <span>Correct</span>
                                     </div>
                                   )}
                                   {isSelected && !isCorrect && (
-                                    <div className="flex items-center space-x-1 px-2 sm:px-3 py-1 bg-red-500/30 text-red-500 rounded-full text-xs sm:text-sm font-medium">
+                                    <div className="flex items-center space-x-1 px-2 sm:px-3 py-1 bg-red-600/20 text-red-900 rounded-full text-xs sm:text-sm font-medium">
                                       <span>✗</span>
                                       <span>Your Choice</span>
                                     </div>
@@ -447,9 +447,9 @@ const Task = () => {
                 <h3 className="text-blue-400 text-lg sm:text-xl font-bold mb-2">Quiz Submitted!</h3>
                 <p className="text-blue-300 mb-4 text-sm sm:text-base break-words">{submissionResult.message}</p>
                 {submissionResult.score !== undefined && (
-                  <div className="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-yellow-900/20 text-yellow-800 rounded-xl font-bold text-base sm:text-lg">
+                  <div className="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-yellow-900/10 text-yellow-900 rounded-xl font-bold text-base sm:text-lg">
                     <span>Final Score:</span>
-                    <span className="text-yellow-800 text-lg sm:text-2xl">
+                    <span className="text-yellow-900 text-lg sm:text-2xl">
                       {submissionResult.score} / {task.questions.reduce((sum, q) => sum + (q.mark || 1), 0)}
                     </span>
                   </div>

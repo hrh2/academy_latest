@@ -216,7 +216,7 @@ function Tasks() {
     }
 
     return (
-        <div className="h-full rounded-2xl bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 relative overflow-y-scroll">
+        <div className="h-full rounded-2xl bg-white relative overflow-y-scroll">
             <div className="relative z-10 flex flex-col gap-6 px-6 w-full h-full overflow-y-scroll">
                 {/* Header */}
                 <div className="text-center py-8">

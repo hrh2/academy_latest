@@ -2,7 +2,7 @@ import React from 'react';
 
 function Loader() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 flex items-center justify-center">
+        <div className="min-h-screen  flex items-center justify-center">
                 <div className="relative">
                     <div className="w-20 h-20 border-4 border-transparent border-t-cyan-500 border-r-purple-500 rounded-full animate-spin"></div>
                     <div className="absolute inset-0 w-20 h-20 border-4 border-transparent border-b-pink-500 border-l-blue-500 rounded-full animate-spin animate-reverse"></div>
