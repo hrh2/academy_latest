@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 0px !important;
+  border-radius:25em;
+  height:0px;
+}
+::-webkit-scrollbar:hover {
+  width: 10px !important;
+}
+
+::-webkit-scrollbar-track {
+  border-radius:25em;
+  background-color: #d4d7d6 !important;
+
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius:25em;
+  background-color: #053a58 !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c3eaf3 !important;
+}
+
+.MuiDataGrid-columnHeader,.MuiDataGrid-filler{
+  background-color: #030712 !important;
+}
+.MuiSvgIcon-root,.MuiDataGrid-menuIcon {
+  color: #ffffff !important;
+}
+
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.markdown-body th, .markdown-body td {
+  padding: 10px;
+  border: 1px solid #555;
+  text-align: left;
+}
+
+.markdown-body th {
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+}
+
+.markdown-body tr:nth-child(even) {
+  background-color: #292b2f;
+}
+
+.markdown-body tr:nth-child(odd) {
+  background-color: #212529;
+}
+
+.markdown-body tr:hover {
+  background-color: #343a40;
+}
+
+.markdown-body td {
+  background-color: #212529;
+  color: #ccc;
+}
+
+.markdown-body code {
+  background-color: #0d1117;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 2px;
+}
+
+
+.markdown-body ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.markdown-body ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.markdown-body a {
+  color: blue;
+}
