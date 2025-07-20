@@ -409,14 +409,13 @@ export default function InteractiveCourseViewer({ courseData }) {
         fixed lg:static inset-y-0 left-0 z-50 lg:z-0
         lg:rounded-l-lg
         w-80 sm:w-96 lg:w-80 xl:w-96
-        h-full
         bg-white
         transform transition-transform duration-300 ease-in-out
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
         backdrop-blur-xl
       `}>
         {(isSidebarOpen || window.innerWidth >= 1024) && (
-          <div className="p-4 lg:p-6">
+          <div className="p-4 lg:p-6 md:h-[84vh] h-[90vh] overflow-y-scroll">
             <div className="lg:hidden flex justify-end p-4">
               <button
                 onClick={() => setIsSidebarOpen(false)}
@@ -658,8 +657,8 @@ export default function InteractiveCourseViewer({ courseData }) {
     const showTopicDesc = currentProgramIndex === 0;
 
     return (
-      <div className="flex-1 h-full overflow-y-auto">
-        <div className="sticky top-0 z-30  backdrop-blur-xl border-b border-gray-700/50">
+      <div className="flex-1 md:h-[88vh] overflow-y-auto">
+        <div className="bg-white sticky top-0 z-30  backdrop-blur-xl border-b border-gray-700/50">
           <div className="p-4 lg:p-6">
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-4">
