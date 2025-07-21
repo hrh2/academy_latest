@@ -4,6 +4,7 @@ import routes from "@/routes.jsx";
 import PrivateRoute from "@/components/PrivateRoute";
 import Loader from "@/components/Loader.jsx";
 import { useAuth } from "@/context/AuthContext.jsx";
+import ErrorPage from "@/pages/auth/ErrorPage.jsx";
 
 function App() {
     const { loading, userData } = useAuth();
@@ -75,7 +76,7 @@ function App() {
                     </Route>
 
             {/* Fallback Routes */}
-            <Route path="/unauthorized" element={<div>Unauthorized</div>} />
+            <Route path="/unauthorized" element={<ErrorPage/>} />
             <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     );

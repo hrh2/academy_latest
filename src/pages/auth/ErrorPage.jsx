@@ -4,7 +4,7 @@ import React from 'react';
 function ErrorPage() {
     return (
         <section className={`w-[100vw]`}>
-            <div className="bg-black text-white">
+            <div className="bg-white text-black">
                 <div className="flex h-screen">
                     <div className="m-auto text-center">
                         <div>
