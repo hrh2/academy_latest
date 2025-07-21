@@ -45,7 +45,8 @@
     "rehype-highlight": "^7.0.2",
     "rehype-katex": "^7.0.1",
     "remark-gfm": "^4.0.1",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "use-debounce": "^10.0.5"
   },
   "devDependencies": {
     "@types/react": "18.2.31",

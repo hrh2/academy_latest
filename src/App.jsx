@@ -77,7 +77,6 @@ function App() {
             {/* Fallback Routes */}
             <Route path="/unauthorized" element={<div>Unauthorized</div>} />
             <Route path="*" element={<Navigate to="/" replace />} />
-
         </Routes>
     );
 }

@@ -58,3 +58,22 @@ export const projectsData = [
 ];
 
 export default projectsData;
+
+
+export const offerings = [
+    {
+        id: 28,
+        title: "AI and Robotics Education",
+        description:"Dive into hands-on courses and projects to learn cutting-edge technologies."
+    },
+    {
+        id: 29,
+        title: "Support for Rwanda’s A-Level Curriculum",
+        description: `Accelerate your success if you’re studying Computer Science combinations, with tailored resources that align with the Rwanda Calculus.`
+    },
+    {
+        id: 30,
+        title: "Global Perspectives",
+        description: "Explore opportunities that connect local education with global innovation trends.",
+    }
+]

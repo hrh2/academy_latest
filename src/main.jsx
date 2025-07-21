@@ -18,6 +18,7 @@ import { MaterialTailwindControllerProvider } from "@/context";
 import "../public/css/tailwind.css";
 import {AuthProvider} from "@/context/AuthContext.jsx";
 import {NotificationProvider} from "@/context/NotificationContext.jsx";
+import {InputProvider} from "@/context/InputContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -26,7 +27,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <MaterialTailwindControllerProvider>
             <AuthProvider>
                 <NotificationProvider>
-                    <App />
+                    <InputProvider>
+                        <App />
+                    </InputProvider>
                 </NotificationProvider>
             </AuthProvider>
         </MaterialTailwindControllerProvider>

@@ -17,6 +17,8 @@ import Course from "@/pages/dashboard/courses/Course.jsx";
 import Tasks from "@/pages/dashboard/tasks/Tasks.jsx";
 import Quiz from "@/pages/dashboard/tasks/Quiz.jsx";
 import {GrTask} from "react-icons/gr";
+import ExplorePage from "@/pages/dashboard/Explore.jsx";
+import {MdTravelExplore} from "react-icons/md";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -105,6 +107,14 @@ export const routes = [
         protected: true,
         roles:  ["ADMIN", "NORMAL", "SPECIAL"],
         element: <Profile />,
+      },
+      {
+        icon: <MdTravelExplore {...icon} />,
+        name: "Explore",
+        path: "/explore",
+        protected: true,
+        roles:  ["ADMIN", "NORMAL", "SPECIAL"],
+        element: <ExplorePage />,
       },
     ],
   },

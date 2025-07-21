@@ -9,10 +9,23 @@ import {
 } from "@/widgets/layout";
 import routes from "@/routes";
 import { useMaterialTailwindController, setOpenConfigurator } from "@/context";
+import {useInput} from "@/context/InputContext.jsx";
+import {useDebounce} from "use-debounce";
+import SearchComponent from "@/components/SearchDisplayer.jsx";
+import {useEffect, useState} from "react";
 
 export function Dashboard() {
   const [controller, dispatch] = useMaterialTailwindController();
   const { sidenavType } = controller;
+  const { inputValue } = useInput();
+  const [searchInput] = useDebounce(inputValue, 1000);
+    const [showSearch, setShowSearch] = useState(false);
+
+  useEffect(() => {
+  if (searchInput && searchInput.length >= 3) {
+    setShowSearch(true);
+  }
+}, [searchInput]);
 
   return (
     <div className="min-h-screen bg-blue-gray-50/50">
@@ -35,6 +48,13 @@ export function Dashboard() {
         >
           <Cog6ToothIcon className="h-5 w-5" />
         </IconButton>
+          {showSearch && (
+  <SearchComponent
+    searchKeyword={searchInput}
+    onClose={() => setShowSearch(false)}
+  />
+)}
+
         <Outlet/>
         <div className="text-blue-gray-600">
           <Footer />

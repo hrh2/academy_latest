@@ -3,6 +3,7 @@ import { MdRocketLaunch } from "react-icons/md";
 import { SiGoogleclassroom } from "react-icons/si";
 import {Button, Typography} from "@material-tailwind/react";
 import {getLinkStyle} from "./IconLink.jsx";
+import Markdown from "@/components/Markdown.jsx";
 
 export const ModernClassesTags = ({ tags, isShort }) => {
   const fixedGradients = [
@@ -83,7 +84,7 @@ export const IconLink= ({ links }) => {
             {filteredLinks.map((link, index) => {
                 const { color, icon } = getLinkStyle(link.name);
                 return (
-                        <a key={index} href={link.url}  title={link.name} className={`items-center justify-center p-2 rounded-lg #text-gray-300 #bg-gray-900 #hover:bg-gray-700`}>
+                        <a key={index} href={link.url}  title={link.name} className={`items-center justify-center p-2 rounded-lg #text-gray-300 #bg-gray-100 #hover:bg-gray-700`}>
                             <span className={color}>{icon}</span>
                         </a>
                 );
@@ -107,9 +108,9 @@ export  const LinksList = ({ links }) => {
             {filteredLinks.map((link, index) => {
                 const { color, icon } = getLinkStyle(link.name);
                 return (
-                    <div key={index} className={`flex items-center gap-4 p-2 border rounded-lg shadow-md border-gray-200`}>
+                    <div key={index} className={`flex items-center gap-4 p-2 border rounded-lg shadow-md border-gray-700`}>
                         <a href={link.url}
-                           className={`inline-flex text-sm items-center justify-center p-2 font-medium rounded-lg text-gray-300 bg-gray-900 hover:bg-gray-700 hover:text-white`}>
+                           className={`inline-flex text-sm items-center justify-center p-2 font-medium rounded-lg text-gray-300 bg-gray-100 hover:bg-gray-700 hover:text-white`}>
                             <span className={color}>{icon}</span>
                             <span className="w-full font-semibold">{link.name}</span>
                             <svg className="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true"
@@ -127,3 +128,39 @@ export  const LinksList = ({ links }) => {
 };
 
 
+
+
+// eslint-disable-next-line react/prop-types
+const LinkComponent = ({ link }) => {
+    // Filter out links containing 'solution' or 'sln'
+    // eslint-disable-next-line react/prop-types
+    const filteredLinks = [link].filter(
+        (link) =>
+            !link.name.toLowerCase().includes('private') &&
+            !link.name.toLowerCase().includes('private2')
+    );
+
+    return (
+        <div className="flex flex-col gap-3 ">
+            {filteredLinks.map((link, index) => {
+                const { color, icon } = getLinkStyle(link.name);
+                return (
+                    <div key={index} className={`flex flex-col h-full  #md:flex-row items-center gap-4 p-1 border rounded-lg shadow-md border-gray-700`}>
+                        <a href={link.url} className={`inline-flex items-center justify-center p-2  font-medium rounded-lg text-gray-900 bg-white hover:bg-gray-100 hover:text-gray-700`}>
+                            <span className={color}>{icon}</span>
+                            <span className="w-full font-semibold text-xs">{link.name}</span>
+                            <svg className="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true"
+                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                      strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                        <Markdown content= {link.description}/>
+                    </div>
+                );
+            })}
+        </div>
+    );
+};
+
+export default LinkComponent;

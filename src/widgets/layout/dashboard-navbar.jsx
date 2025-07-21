@@ -26,9 +26,11 @@ import {
   setOpenSidenav,
 } from "@/context";
 import {useAuth} from "@/context/AuthContext.jsx";
+import {useInput} from "@/context/InputContext.jsx";
 
 export function DashboardNavbar() {
   const { userData } = useAuth();
+  const { inputValue, setInputValue } = useInput();
   const [controller, dispatch] = useMaterialTailwindController();
   const { fixedNavbar, openSidenav } = controller;
   const { pathname } = useLocation();
@@ -75,7 +77,7 @@ export function DashboardNavbar() {
         </div>
         <div className="flex items-center">
           <div className="mr-auto md:mr-4 md:w-56">
-            <Input label="Search" />
+            <Input value={inputValue} onChange={(e) => setInputValue(e.target.value)} label="Search" />
           </div>
           <IconButton
             variant="text"
