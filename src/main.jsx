@@ -19,6 +19,7 @@ import "../public/css/tailwind.css";
 import {AuthProvider} from "@/context/AuthContext.jsx";
 import {NotificationProvider} from "@/context/NotificationContext.jsx";
 import {InputProvider} from "@/context/InputContext.jsx";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -28,7 +29,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <AuthProvider>
                 <NotificationProvider>
                     <InputProvider>
-                        <App />
+                        <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+                            <App />
+                        </GoogleOAuthProvider>
                     </InputProvider>
                 </NotificationProvider>
             </AuthProvider>

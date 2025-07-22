@@ -110,7 +110,7 @@ export  const LinksList = ({ links }) => {
                 return (
                     <div key={index} className={`flex items-center gap-4 p-2 border rounded-lg shadow-md border-gray-700`}>
                         <a href={link.url}
-                           className={`inline-flex text-sm items-center justify-center p-2 font-medium rounded-lg text-gray-300 bg-gray-100 hover:bg-gray-700 hover:text-white`}>
+                           className={`inline-flex text-sm items-center justify-center p-2 font-medium rounded-lg text-gray-800 bg-gray-100 hover:bg-gray-700 hover:text-white`}>
                             <span className={color}>{icon}</span>
                             <span className="w-full font-semibold">{link.name}</span>
                             <svg className="w-4 h-4 ms-2 rtl:rotate-180" aria-hidden="true"
@@ -119,7 +119,7 @@ export  const LinksList = ({ links }) => {
                                       strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                             </svg>
                         </a>
-                        <div className=" text-gray-400">{link.description}</div>
+                        <div className=" text-gray-900">{link.description}</div>
                     </div>
                 );
             })}

@@ -41,13 +41,13 @@ export function Footer({ brandName, brandLink, routes }) {
 }
 
 Footer.defaultProps = {
-  brandName: "Creative Tim",
-  brandLink: "https://www.creative-tim.com",
+  brandName: "BYOSE",
+  brandLink: "https://www.byose.info/",
   routes: [
-    { name: "Creative Tim", path: "https://www.creative-tim.com" },
-    { name: "About Us", path: "https://www.creative-tim.com/presentation" },
-    { name: "Blog", path: "https://www.creative-tim.com/blog" },
-    { name: "License", path: "https://www.creative-tim.com/license" },
+    { name: "Academy", path: "https://academy.byose.info/" },
+    { name: "About Us", path: "https://www.byose.info/" },
+    { name: "Who We Are", path: "https://www.byose.info/we-are" },
+    { name: "Project", path: "https://www.byose.info/presence-eye" },
   ],
 };
 

@@ -11,6 +11,7 @@ function App() {
 
     if (loading) return <Loader />;
 
+
     const userRole = () => {
         return userData?.role;
     }
@@ -32,7 +33,7 @@ function App() {
                         ))
                 )}
             </Route>
-            <Route path="/" element={<Dashboard />}>
+            <Route path="/" element={userData?<Dashboard />:<Navigate to="/auth/sign-in" />}>
             {/* Main App Routes */}
             {
                 isAdmin() ? (
@@ -77,7 +78,6 @@ function App() {
 
             {/* Fallback Routes */}
             <Route path="/unauthorized" element={<ErrorPage/>} />
-            <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     );
 }
