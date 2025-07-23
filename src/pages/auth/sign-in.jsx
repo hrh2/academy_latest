@@ -40,7 +40,7 @@ export function SignIn() {
       showNotification("Navigating to Dashboard","success");
       setTimeout(() => {
         window.location = "/";
-      }, 500);
+      }, 100);
     } catch (error) {
       showNotification(error.response.data.message||error.message||"Unexpected issue occurred","error");
     }finally {

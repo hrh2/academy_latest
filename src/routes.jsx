@@ -137,7 +137,7 @@ export const routes = [
       {
         icon: <ServerStackIcon {...icon} />,
         name: "OTP",
-        path: "/auth/otp/",
+        path: "/auth/otp/:email",
         element: <Verification />,
       },
       {

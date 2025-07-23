@@ -66,7 +66,7 @@ const ContentViewer = ({ showCourseDesc, showTopicDesc, courseData, currentTopic
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             {/* eslint-disable-next-line react/prop-types */}
-            <Typography variant="h3" className="text-lg lg:text-xl font-semibold ">{courseData.course?.name}</Typography>
+            <Typography variant="h3" className="md:text-3xl text-xl  font-semibold ">{courseData.course?.name}</Typography>
           </div>
           <Button
             variant={"outlined"}
@@ -78,7 +78,7 @@ const ContentViewer = ({ showCourseDesc, showTopicDesc, courseData, currentTopic
             <ChevronUp className="w-4 h-4" />
           </Button>
         </div>
-        <div className="text-sm lg:text-base">
+        <div className="">
           {/* eslint-disable-next-line react/prop-types */}
           <Markdown content={courseData.course?.description} />
         </div>
@@ -108,7 +108,7 @@ const ContentViewer = ({ showCourseDesc, showTopicDesc, courseData, currentTopic
           {/* eslint-disable-next-line react/prop-types */}
           <Typography className="text-lg lg:text-xl font-semibold text-black">{currentTopic.title}</Typography>
         </div>
-        <div className="text-sm lg:text-base pt-6 text-black">
+        <div className="pt-6 text-black">
           {/* eslint-disable-next-line react/prop-types */}
           <Markdown content={currentTopic.description} />
         </div>
@@ -124,7 +124,7 @@ const ContentViewer = ({ showCourseDesc, showTopicDesc, courseData, currentTopic
           </Card>
         </div>
       </div>
-      <div className="text-sm lg:text-base text-black">
+      <div className="text-black">
         {/* eslint-disable-next-line react/prop-types */}
         <Markdown content={currentProgram.description} />
       </div>

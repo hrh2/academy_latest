@@ -51,7 +51,7 @@ export function Verification() {
                 }
                 setTimeout(() => {
                   navigate(`/`);
-                }, 300);
+                }, 100);
             }
         } catch (err) {
             showNotification("Something went wrong. Please try again.","error");
