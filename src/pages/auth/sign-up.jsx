@@ -36,10 +36,10 @@ export function SignUp() {
     const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (data.password !== data.confirmPassword) {
-      showNotification("Passwords do not match. Please try again.","warning");
-      return;
-    }
+    // if (data.password !== data.confirmPassword) {
+    //   showNotification("Passwords do not match. Please try again.","warning");
+    //   return;
+    // }
 
     try {
       setLoader(true);
