@@ -550,8 +550,8 @@ export default function InteractiveCourseViewer({ courseData }) {
     const showTopicDesc = currentProgramIndex === 0;
 
     return (
-      <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-        <div className="bg-white rounded-2xl w-full max-w-6xl max-h-[90vh] overflow-hidden border border-gray-700/50 shadow-2xl overflow-y-scroll">
+      <div className="fixed inset-0 z-50  w-full bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+        <div className="bg-white rounded-2xl w-full max-w-[85vw] max-h-[90vh] overflow-hidden border border-gray-700/50 shadow-2xl overflow-y-scroll">
           <div className="flex items-center justify-between p-6 border-b border-gray-700/50 bg-gray-100/50">
             <div className="flex items-center gap-4">
               <div>
