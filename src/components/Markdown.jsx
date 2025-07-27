@@ -4,7 +4,8 @@ import ReactMarkdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
-import "highlight.js/styles/github-dark.css";
+// import "highlight.js/styles/github-dark.css";
+import "highlight.js/styles/github.css"; // Light mode version
 import "katex/dist/katex.min.css"; // Import KaTeX CSS
 import remarkGfm from "remark-gfm";
 
