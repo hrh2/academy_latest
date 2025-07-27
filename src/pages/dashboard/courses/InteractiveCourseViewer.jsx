@@ -408,7 +408,7 @@ export default function InteractiveCourseViewer({ courseData }) {
       <div className={`
         fixed lg:static inset-y-0 left-0 z-50 lg:z-0
         lg:rounded-l-lg
-        w-80 sm:w-96 lg:w-80 xl:w-96
+        w-80
         bg-white
         transform transition-transform duration-300 ease-in-out
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}

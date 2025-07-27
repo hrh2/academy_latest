@@ -43,7 +43,7 @@ function Course() {
     }
 
     return (
-        <div className="container mx-auto px-2 w-full h-full overflow-hidden overflow-y-scroll">
+        <div className="px-2 w-full h-full overflow-hidden overflow-y-scroll">
             <InteractiveCourseViewer courseData={courseDetails} />
         </div>
     );
