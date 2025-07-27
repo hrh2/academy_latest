@@ -214,7 +214,7 @@ const Task = () => {
               </div>
 
               <div className="prose prose-invert prose-sm sm:prose-base max-w-none overflow-hidden">
-                <div className="break-words">
+                <div className="break-words ">
                   <Markdown content={task.description} />
                 </div>
               </div>

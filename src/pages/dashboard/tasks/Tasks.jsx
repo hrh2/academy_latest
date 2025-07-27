@@ -145,19 +145,19 @@ function Tasks() {
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="text-lg font-semibold text-gray-800 mb-3 line-clamp-2">
+                                <h3 className="text-xl font-semibold text-gray-800 mb-3 line-clamp-2">
                                     {task.title}
                                 </h3>
 
                                 {task.description && (
-                                    <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+                                    <p className="leading-relaxed mb-4 line-clamp-3">
                                         <Markdown content={task.description} />
                                     </p>
                                 )}
 
                                 {/* Quiz specific info */}
                                 {task.type === 'QUIZ' && task.questions && (
-                                    <div className="flex items-center space-x-4 text-xs text-gray-500 mb-3">
+                                    <div className="flex items-center space-x-4 text-md text-gray-700 mb-3">
                                         <div className="flex items-center">
                                             <Target className="w-3 h-3 mr-1" />
                                             {task.questions.length} Questions
