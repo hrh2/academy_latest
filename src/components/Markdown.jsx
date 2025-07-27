@@ -11,7 +11,7 @@ import remarkGfm from "remark-gfm";
 // eslint-disable-next-line react/prop-types
 export default function Markdown({ content }) {
     return (
-        <div className="markdown-body md:text-3xl text-2xl">
+        <div className="markdown-body md:text-2xl text-xl">
             <ReactMarkdown
                 // className="flex flex-col gap-3"
                 remarkPlugins={[remarkGfm, remarkMath]} // Add remarkMath
