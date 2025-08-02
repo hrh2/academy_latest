@@ -153,3 +153,7 @@ p{
   text-decoration: underline;
 }
 
+.markdown-body img{
+  max-width: 550px;
+}
+

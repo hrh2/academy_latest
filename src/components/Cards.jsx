@@ -78,7 +78,7 @@ export function ModernListTopics({ topics }) {
 export  function Course({ course, isMore }) {
     return (
             <div
-                className="max-w-sm h-full w-full bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-200 dark:border-gray-300">
+                className="max-w-sm h-full w-full bg-white border border-gray-500 rounded-lg shadow-sm dark:bg-gray-200 dark:border-gray-300">
                 <a href={`/courses/${course._id}`}>
                     <img className="rounded-t-lg w-full object-center object-cover max-h-[14rem]" src={course.image} alt="image"/>
                 </a>

@@ -400,7 +400,7 @@ export default function InteractiveCourseViewer({ courseData }) {
     <>
       {isSidebarOpen && (
         <div
-          className="fixed p-1 inset-0 bg-white backdrop-blur-sm z-40 lg:hidden"
+          className="fixed p-1 inset-0 bg-black bg-opacity-25 backdrop-blur-sm z-40 lg:hidden"
           onClick={() => setIsSidebarOpen(false)}
           aria-label="Close sidebar"
         />
@@ -410,6 +410,7 @@ export default function InteractiveCourseViewer({ courseData }) {
         lg:rounded-l-lg
         w-80
         bg-white
+        border-r-2
         transform transition-transform duration-300 ease-in-out
         ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
         backdrop-blur-xl
@@ -789,7 +790,7 @@ export default function InteractiveCourseViewer({ courseData }) {
 
   return (
     <>
-      <div className={`${isFullscreen ? 'fixed inset-0 z-50 bg-gray-950' : 'w-full h-full'} flex relative`}>
+      <div className={`${isFullscreen ? 'fixed inset-0 z-50 bg-gray-950' : 'w-full h-full'} flex relative mx-auto`}>
         {!isFullscreen && <TopicSidebar />}
         <ProgramViewer />
         {copiedCode && (

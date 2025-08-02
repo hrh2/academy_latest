@@ -36,7 +36,7 @@ export function Dashboard() {
         }
         brandName={"Foreach"}
       />
-      <div className="p-4 xl:ml-80">
+      <div className="p-4 #xl:ml-80">
         <DashboardNavbar />
         <Configurator />
         <IconButton

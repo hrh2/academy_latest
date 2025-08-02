@@ -54,6 +54,14 @@ export function DashboardNavbar() {
               fixedNavbar ? "mt-1" : ""
             }`}
           >
+            <IconButton
+            variant="text"
+            color="blue-gray"
+            className="grid #xl:hidden"
+            onClick={() => setOpenSidenav(dispatch, !openSidenav)}
+          >
+            <Bars3Icon strokeWidth={3} className="h-6 w-6 text-blue-gray-500" />
+          </IconButton>
             <Link to={`/${layout}`}>
               <Typography
                 variant="small"
@@ -79,14 +87,6 @@ export function DashboardNavbar() {
           <div className="mr-auto md:mr-4 md:w-56">
             <Input value={inputValue} onChange={(e) => setInputValue(e.target.value)} label="Search" />
           </div>
-          <IconButton
-            variant="text"
-            color="blue-gray"
-            className="grid xl:hidden"
-            onClick={() => setOpenSidenav(dispatch, !openSidenav)}
-          >
-            <Bars3Icon strokeWidth={3} className="h-6 w-6 text-blue-gray-500" />
-          </IconButton>
           <Link to="/profile">
             <Button
               variant="text"
