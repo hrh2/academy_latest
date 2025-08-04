@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.quiz {
+  user-select: none; /* Prevents text selection */
+}
+
+
 ::-webkit-scrollbar {
   width: 0px !important;
   border-radius:25em;

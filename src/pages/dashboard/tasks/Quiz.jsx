@@ -166,7 +166,7 @@ const Task = () => {
   const progress = (answeredCount / totalQuestions) * 100;
 
   return (
-    <div className="h-full bg-gray-100 text-gray-800 dark:bg-gradient-to-br from-gray-900 via-purple-900/30 to-gray-900 dark:text-white relative overflow-hidden overflow-y-scroll">
+    <div className="h-full quiz bg-gray-100 text-gray-800 dark:bg-gradient-to-br from-gray-900 via-purple-900/30 to-gray-900 dark:text-white relative overflow-hidden overflow-y-scroll">
 
       <div className="relative z-10 p-4 sm:p-6 pt-8 sm:pt-12 #overflow-y-auto">
         <div className="container mx-auto max-w-4xl ">
